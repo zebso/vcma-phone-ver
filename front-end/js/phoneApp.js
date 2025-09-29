@@ -1,7 +1,7 @@
 // Phone App Main Logic
 (() => {
   'use strict';
-  
+
   if (window.PhoneApp) return; // 多重読み込みガード
 
   class PhoneApp {
@@ -10,7 +10,7 @@
       this.currentBalance = 0;
       this.isLoading = false;
       this.API_BASE = '/api';
-      
+
       this.initializeApp();
     }
 
@@ -31,7 +31,7 @@
         if (toggle) toggle.checked = true;
       }
     }
-    
+
     toggleDarkMode() {
       const isDarkMode = document.body.classList.toggle('dark-mode');
       localStorage.setItem('darkMode', isDarkMode);
@@ -63,7 +63,7 @@
       `;
       notification.textContent = message;
       document.body.appendChild(notification);
-      
+
       setTimeout(() => {
         notification.remove();
       }, 3000);
@@ -92,13 +92,13 @@
           },
           ...options
         });
-        
+
         const data = await response.json();
-        
+
         if (!response.ok) {
           throw new Error(data.error || 'API error');
         }
-        
+
         return data;
       } catch (error) {
         this.showNotification(error.message, 'error');
@@ -138,7 +138,7 @@
       const body = {};
       if (id) body.id = id;
       if (balance > 0) body.balance = balance;
-      
+
       return await this.apiCall('/users', {
         method: 'POST',
         body: JSON.stringify(body)
@@ -196,23 +196,25 @@
       const container = document.getElementById('ranking');
       if (!container) return;
 
-      container.innerHTML = `<h3 style="margin-bottom: 20px;">ユーザー</h3>
-<div class="input-section">
-  <h3 style="margin-bottom: 16px;">ユーザー追加</h3>
+      container.innerHTML = `
+        <h3 style="margin-bottom: 20px;">ユーザー</h3>
+        <div class="input-section">
+          <h3 style="margin-bottom: 16px;">ユーザー追加</h3>
 
-  <div class="input-group">
-    <label>ユーザーID（任意。未入力なら自動生成）</label>
-    <input type="text" class="input-field" id="newUserId" placeholder="例: CC-2025-XXXXX">
-  </div>
+          <div class="input-group">
+            <label>ユーザーID（任意。未入力なら自動生成）</label>
+            <input type="text" class="input-field" id="newUserId" placeholder="例: CC-2025-XXXXX">
+          </div>
 
-  <div class="input-group">
-    <label>初期残高</label>
-    <input type="number" class="input-field" id="initialBalance" placeholder="0">
-  </div>
+          <div class="input-group">
+            <label>初期残高</label>
+            <input type="number" class="input-field" id="initialBalance" placeholder="0">
+          </div>
 
-  <button class="btn" id="createUserBtn">作成</button>
-</div>`;
-      
+          <button class="btn" id="createUserBtn">作成</button>
+        </div>
+      `;
+
       ranking.forEach((user, index) => {
         const item = document.createElement('div');
         item.className = 'ranking-item';
@@ -239,7 +241,7 @@
       const title = container.querySelector('h3');
       container.innerHTML = '';
       if (title) container.appendChild(title);
-      
+
       if (history.length === 0) {
         const noData = document.createElement('div');
         noData.style.cssText = 'text-align: center; padding: 40px 20px; color: #666;';
@@ -247,22 +249,22 @@
         container.appendChild(noData);
         return;
       }
-      
+
       history.forEach(item => {
         const historyItem = document.createElement('div');
         historyItem.className = 'history-item';
-        
+
         const typeText = {
           'add': '入金',
           'subtract': '出金',
           'generate': 'アカウント作成'
         }[item.type] || item.type;
-        
+
         const amountClass = (item.type === 'add' || item.type === 'generate') ? 'positive' : 'negative';
-        const amountText = (item.type === 'add' || item.type === 'generate') ? 
-          `+${this.formatCurrency(Math.abs(item.amount))}` : 
+        const amountText = (item.type === 'add' || item.type === 'generate') ?
+          `+${this.formatCurrency(Math.abs(item.amount))}` :
           `-${this.formatCurrency(Math.abs(item.amount))}`;
-        
+
         historyItem.innerHTML = `
           <div class="history-user">ユーザーID: ${item.id}</div>
           <div class="history-date">${this.formatDate(item.timestamp)}</div>
@@ -277,7 +279,7 @@
       const activeIds = document.getElementById('activeIds');
       const totalBalance = document.getElementById('totalBalance');
       const totalTransactions = document.getElementById('totalTransactions');
-      
+
       if (activeIds) activeIds.textContent = stats.activeIds.toLocaleString();
       if (totalBalance) totalBalance.textContent = this.formatCurrency(stats.totalBalance);
       if (totalTransactions) totalTransactions.textContent = stats.totalTransactions.toLocaleString();
@@ -289,12 +291,12 @@
       if (!userIdInput) return;
 
       const userId = userIdInput.value.trim();
-      
+
       if (!userId) {
         this.showNotification('ユーザーIDを入力してください', 'error');
         return;
       }
-      
+
       try {
         const userData = await this.getBalance(userId);
         this.currentUserId = userData.id;
@@ -322,25 +324,25 @@
         this.showNotification('先にユーザーを選択してください', 'error');
         return;
       }
-      
+
       const amountInput = document.querySelector('input[placeholder="金額を入力"]');
       const gameInput = document.getElementById('gameType');
-      
+
       if (!amountInput) return;
 
       const amount = parseInt(amountInput.value);
       const games = (gameInput?.value || '').trim();
-      
+
       if (!amount || amount <= 0) {
         this.showNotification('正しい金額を入力してください', 'error');
         return;
       }
-      
+
       try {
-        const result = isAdd 
+        const result = isAdd
           ? await this.addMoney(this.currentUserId, amount, games)
           : await this.subtractMoney(this.currentUserId, amount, games);
-        
+
         this.updateBalanceDisplay(result.balance);
         amountInput.value = '';
         if (gameInput) gameInput.value = '';
@@ -424,7 +426,7 @@
       if (inputSections.length > 1) {
         const addBtn = inputSections[1].querySelector('.btn');
         const subtractBtn = inputSections[1].querySelector('.btn-outline');
-        
+
         if (addBtn) addBtn.addEventListener('click', () => this.handleMoneyChange(true));
         if (subtractBtn) subtractBtn.addEventListener('click', () => this.handleMoneyChange(false));
       }
@@ -437,7 +439,7 @@
 
       // Button interactions
       document.querySelectorAll('.btn').forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
           if (!this.disabled) {
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
@@ -463,15 +465,15 @@
     getTabNameFromNav(navItem) {
       const span = navItem.querySelector('span');
       if (!span) return null;
-      
+
       const tabMap = {
         '統計': 'dashboard',
-        '残高': 'balance', 
+        '残高': 'balance',
         'ユーザー': 'ranking',
         '履歴': 'history',
         '設定': 'settings'
       };
-      
+
       return tabMap[span.textContent] || null;
     }
   }
