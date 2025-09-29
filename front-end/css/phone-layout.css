@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+/* レイアウト関連スタイル */
+
+.app-container {
+  max-width: 414px;
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+  min-height: 100vh;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Header */
+.header {
+  background: white;
+  padding: 16px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1976d2;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+/* Content Area */
+.content {
+  padding: 0 0 80px 0;
+  min-height: calc(100vh - 140px);
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 414px;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+  padding: 8px 4px;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #757575;
+}
+
+.nav-item.active {
+  color: #1976d2;
+}
+
+.nav-item i {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.nav-item span {
+  font-size: 12px;
+  font-weight: 400;
+}

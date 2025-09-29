@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+/* ダークモーステーマ */
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .app-container {
+  background: #1e1e1e;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .header {
+  background: #2d2d2d;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .header h1 {
+  color: #90caf9;
+}
+
+body.dark-mode .balance-card {
+  background: linear-gradient(135deg, #1565c0, #1976d2);
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.5);
+}
+
+body.dark-mode .input-section {
+  background: #2d2d2d;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .input-group label {
+  color: #b0b0b0;
+}
+
+body.dark-mode .input-field {
+  background-color: #3d3d3d;
+  border-color: #555;
+  color: #ffffff;
+}
+
+body.dark-mode .input-field:focus {
+  border-color: #90caf9;
+}
+
+body.dark-mode .btn {
+  background: #90caf9;
+  border-color: #90caf9;
+  color: #000;
+}
+
+body.dark-mode .btn:hover {
+  background: #64b5f6;
+  border-color: #64b5f6;
+}
+
+body.dark-mode .btn-outline {
+  color: #90caf9;
+  border-color: #90caf9;
+  background: #2d2d2d;
+}
+
+body.dark-mode .btn-outline:hover {
+  background: #90caf9;
+  color: #000;
+}
+
+body.dark-mode .ranking-item {
+  background: #2d2d2d;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .ranking-number {
+  background: #90caf9;
+  color: #000;
+}
+
+body.dark-mode .ranking-amount {
+  color: #b0b0b0;
+}
+
+body.dark-mode .history-item {
+  background: #2d2d2d;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .history-date {
+  color: #b0b0b0;
+}
+
+body.dark-mode .history-amount.positive {
+  color: #81c784;
+}
+
+body.dark-mode .history-amount.negative {
+  color: #ef5350;
+}
+
+body.dark-mode .history-user {
+  color: #90caf9;
+}
+
+body.dark-mode .settings-item {
+  background: #2d2d2d;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .bottom-nav {
+  background: #2d2d2d;
+  border-top-color: #555;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .nav-item {
+  color: #b0b0b0;
+}
+
+body.dark-mode .nav-item.active {
+  color: #90caf9;
+}
+
+body.dark-mode .qr-scanner {
+  border-color: #90caf9;
+  color: #90caf9;
+}
+
+body.dark-mode .stat-card {
+  background: #2d2d2d;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .stat-card i {
+  color: #90caf9;
+}
+
+body.dark-mode .stat-number {
+  color: #ffffff;
+}
+
+body.dark-mode .stat-label {
+  color: #b0b0b0;
+}
