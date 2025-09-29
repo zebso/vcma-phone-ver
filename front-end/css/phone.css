@@ -2,6 +2,57 @@
 
 /* Phone App 専用スタイル */
 
+/* カラープロファイル
+ * ==========================================
+ * 
+ * ■ プライマリカラー
+ * - Primary Blue: #1976d2 (メインカラー、ボタン、アクセント)
+ * - Primary Blue Light: #42a5f5 (グラデーション、ホバー時)
+ * - Primary Blue Dark: #1565c0 (ホバー時、ダークバリエーション)
+ * - Primary Blue Very Light: #90caf9 (ダークモード時のアクセント)
+ * - Primary Blue Lightest: #64b5f6 (ダークモード時のホバー)
+ * 
+ * ■ バックグラウンドカラー
+ * - Light Background: #fafafa (ライトモードのベース背景)
+ * - Light Surface: #ffffff (ライトモードのカード背景)
+ * - Dark Background: #121212 (ダークモードのベース背景)
+ * - Dark Surface: #1e1e1e (ダークモードのメイン背景)
+ * - Dark Card: #2d2d2d (ダークモードのカード背景)
+ * - Dark Input: #3d3d3d (ダークモードの入力フィールド)
+ * 
+ * ■ テキストカラー
+ * - Primary Text Light: #212121 (ライトモードのメインテキスト)
+ * - Secondary Text Light: #666666 (ライトモードのセカンダリテキスト)
+ * - Disabled Text Light: #757575 (ライトモードの非活性テキスト)
+ * - Primary Text Dark: #ffffff (ダークモードのメインテキスト)
+ * - Secondary Text Dark: #b0b0b0 (ダークモードのセカンダリテキスト)
+ * 
+ * ■ ボーダー・区切り線
+ * - Light Border: #e0e0e0 (ライトモードのボーダー)
+ * - Dark Border: #555555 (ダークモードのボーダー)
+ * 
+ * ■ ステータスカラー
+ * - Success Green: #4caf50 (成功、プラス表示)
+ * - Success Green Dark: #81c784 (ダークモード時の成功色)
+ * - Error Red: #f44336 (エラー、マイナス表示)
+ * - Error Red Dark: #ef5350 (ダークモード時のエラー色)
+ * - QR Scanner Line: #00e676 (QRスキャナーの線)
+ * 
+ * ■ シャドウ
+ * - Light Shadow: rgba(0,0,0,0.1) (ライトモードの基本シャドウ)
+ * - Light Shadow Strong: rgba(0,0,0,0.3) (ライトモードの強めシャドウ)
+ * - Dark Shadow: rgba(0,0,0,0.3) (ダークモードの基本シャドウ)
+ * - Dark Shadow Strong: rgba(0,0,0,0.5) (ダークモードの強めシャドウ)
+ * - Primary Shadow: rgba(25, 118, 210, 0.3) (プライマリカラーのシャドウ)
+ * - Primary Shadow Dark: rgba(25, 118, 210, 0.5) (ダークモード時のプライマリシャドウ)
+ * 
+ * ■ インタラクション
+ * - Switch Inactive: #cccccc (スイッチの非活性状態)
+ * - Switch Active: #1976d2 (スイッチの活性状態)
+ * 
+ * ==========================================
+ */
+
 /* フォント設定 */
 @font-face {
   font-family: 'JK Font';
