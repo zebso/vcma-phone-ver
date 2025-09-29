@@ -177,4 +177,5 @@ app.get('/', (req, res) => {
 //サーバー立ち上げ
 app.listen(process.env.PORT || PORT, () => {
   console.log(`The server started on port ${PORT}`);
+  console.log(`Access it at http://localhost:${PORT}/`);
 });
