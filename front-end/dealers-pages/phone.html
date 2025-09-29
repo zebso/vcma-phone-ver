@@ -24,7 +24,7 @@
 
         <div class="input-section">
           <h3 style="margin-bottom: 16px;">ユーザー検索</h3>
-          <div class="qr-scanner" id="qrScanner">
+          <div class="qr-scanner" id="qrScanner" style="position: relative;">
             <div id="qrIdle">
               <i class="material-icons">qr_code_scanner</i>
               <div>タップしてQRスキャン開始</div>
@@ -32,8 +32,8 @@
 
             <!-- 実際のプレビュー -->
             <video id="qrVideo" playsinline style="width:100%;max-height:260px;display:none;border-radius:8px;"></video>
-            <!-- 描画＆ガイド用（非表示でOK / またはオーバーレイ描画に使う） -->
-            <canvas id="qrCanvas" style="display:none;"></canvas>
+            <!-- 描画＆ガイド用（QRコード検出枠を表示） -->
+            <canvas id="qrCanvas" style="position:absolute;top:0;left:0;width:100%;max-height:260px;display:none;border-radius:8px;pointer-events:none;"></canvas>
 
             <div id="qrOverlay" style="display:none; text-align:center; margin-top:8px;">
               <button class="btn" id="qrStopBtn" type="button">停止</button>
@@ -148,6 +148,8 @@
       </div>
     </div>
   </div>
+  <!-- jsQRライブラリ -->
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
   <script src="../js/utils.js"></script>
   <script src="../js/apiService.js"></script>
   <script src="../js/uiManager.js"></script>

@@ -37,6 +37,14 @@
     this.stopBtn = document.getElementById('qrStopBtn');
     this.switchBtn = document.getElementById('qrSwitchBtn');
     this.idleEl = document.getElementById('qrIdle');
+    
+    // デバッグ用ログ
+    console.log('QRScanner要素初期化:', {
+      scannerEl: !!this.scannerEl,
+      videoEl: !!this.videoEl,
+      canvasEl: !!this.canvasEl,
+      jsQRライブラリ: typeof jsQR !== 'undefined'
+    });
   };
 
   QRScanner.prototype.enumerateCameras = function() {
@@ -98,6 +106,7 @@
 
   QRScanner.prototype.start = function() {
     var self = this;
+    console.log('QRスキャナー開始中...');
     
     return this.enumerateCameras()
       .then(function() {
@@ -139,6 +148,7 @@
             })
             .then(function() {
               self.videoEl.style.display = 'block';
+              self.canvasEl.style.display = 'block';
               self.overlayEl.style.display = 'block';
               self.idleEl.style.display = 'none';
 
@@ -177,6 +187,7 @@
     this.videoEl.srcObject = null;
 
     this.videoEl.style.display = 'none';
+    this.canvasEl.style.display = 'none';
     this.overlayEl.style.display = 'none';
     this.idleEl.style.display = 'block';
   };
@@ -215,12 +226,15 @@
       var imageData = ctx.getImageData(0, 0, width, height);
 
       if (typeof jsQR !== 'undefined') {
-        var code = jsQR(imageData.data, imageData.width, imageData.height, { inversionAttempts: 'dontInvert' });
+        var code = jsQR(imageData.data, imageData.width, imageData.height, {
+          inversionAttempts: 'dontInvert'
+        });
 
         ctx.clearRect(0, 0, width, height);
         ctx.drawImage(this.videoEl, 0, 0, width, height);
 
         if (code) {
+          console.log('QRコード検出成功:', code.data);
           this.drawLine(ctx, code.location.topLeftCorner, code.location.topRightCorner);
           this.drawLine(ctx, code.location.topRightCorner, code.location.bottomRightCorner);
           this.drawLine(ctx, code.location.bottomRightCorner, code.location.bottomLeftCorner);
@@ -229,6 +243,8 @@
           this.handleResult(code.data);
           return;
         }
+      } else {
+        console.warn('jsQRライブラリが読み込まれていません');
       }
     }
     requestAnimationFrame(function() { self.tick(); });
