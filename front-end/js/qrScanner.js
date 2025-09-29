@@ -1,4 +1,4 @@
-// QR Scanner Module for Phone App
+// Phone App用のQRスキャナーモジュール
 (() => {
   'use strict';
   

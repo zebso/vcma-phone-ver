@@ -1,4 +1,4 @@
-// Event Handlers for Phone App
+// Phone App用のイベントハンドラー
 (() => {
   'use strict';
 
@@ -132,7 +132,7 @@
 
     handleTabSwitch(tabName, navItem) {
       this.uiManager.switchTab(tabName, navItem, (tabName) => {
-        // Load data when switching to certain tabs
+        // 特定のタブに切り替える際にデータを読み込む
         if (tabName === 'dashboard') {
           this.loadDashboard();
         } else if (tabName === 'ranking') {
@@ -144,13 +144,13 @@
     }
 
     setupEventListeners() {
-      // Search button
+      // 検索ボタン
       const searchBtn = document.querySelector('.input-section button.btn:not(#qrStopBtn):not(#qrSwitchBtn)');
       if (searchBtn) {
         searchBtn.addEventListener('click', () => this.handleUserSearch());
       }
 
-      // Add/Subtract buttons - target the second input-section
+      // 追加/減算ボタン - 2番目のinput-sectionをターゲット
       const inputSections = document.querySelectorAll('.input-section');
       if (inputSections.length > 1) {
         const addBtn = inputSections[1].querySelector('.btn');
@@ -160,13 +160,13 @@
         if (subtractBtn) subtractBtn.addEventListener('click', () => this.handleMoneyChange(false));
       }
 
-      // Dark mode toggle
+      // ダークモード切り替え
       const darkModeToggle = document.getElementById('darkModeToggle');
       if (darkModeToggle) {
         darkModeToggle.addEventListener('change', () => Utils.toggleDarkMode());
       }
 
-      // Tab navigation setup
+      // タブナビゲーション設定
       document.querySelectorAll('.nav-item').forEach(navItem => {
         if (!navItem.onclick) { // 既にonclickが設定されている場合はスキップ
           navItem.addEventListener('click', () => {
@@ -178,11 +178,11 @@
         }
       });
 
-      // Setup button interactions
+      // ボタンインタラクション設定
       Utils.setupButtonInteractions();
     }
   }
 
-  // Global export
+  // グローバルエクスポート
   window.EventHandlers = EventHandlers;
 })();

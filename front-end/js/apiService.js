@@ -1,4 +1,4 @@
-// API Service for Phone App
+// Phone App用のAPIサービス
 (() => {
   'use strict';
 
@@ -9,7 +9,7 @@
 
     async apiCall(endpoint, options = {}) {
       try {
-        // Loading状態は呼び出し元で管理
+        // ローディング状態は呼び出し元で管理
         const response = await fetch(`${this.API_BASE}${endpoint}`, {
           headers: {
             'Content-Type': 'application/json',
@@ -72,6 +72,6 @@
     }
   }
 
-  // Global export
+  // グローバルエクスポート
   window.ApiService = ApiService;
 })();

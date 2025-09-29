@@ -1,4 +1,4 @@
-// Phone App Main Logic
+// Phone App メインロジック
 (() => {
   'use strict';
 
@@ -6,7 +6,7 @@
 
   class PhoneApp {
     constructor() {
-      // Initialize service classes
+      // サービスクラスを初期化
       this.apiService = new ApiService();
       this.uiManager = new UiManager();
       this.eventHandlers = new EventHandlers(this.apiService, this.uiManager);
@@ -22,7 +22,7 @@
       });
     }
 
-    // Legacy methods for backward compatibility
+    // 下位互換性のためのレガシーメソッド
     showNotification(message, type) {
       Utils.showNotification(message, type);
     }
@@ -40,7 +40,7 @@
     }
   }
 
-  // Export functions for QR Scanner and other modules
+  // QRスキャナーやその他のモジュール用のエクスポート関数
   window.showNotification = (message, type) => {
     Utils.showNotification(message, type);
   };
@@ -51,11 +51,11 @@
     }
   };
 
-  // Global instance
+  // グローバルインスタンス
   window.PhoneApp = PhoneApp;
   window.phoneAppInstance = new PhoneApp();
 
-  // Legacy function support for inline onclick handlers
+  // インラインonclickハンドラー用のレガシー関数サポート
   window.switchTab = (tabName, navItem) => {
     if (window.phoneAppInstance) {
       window.phoneAppInstance.switchTab(tabName, navItem);

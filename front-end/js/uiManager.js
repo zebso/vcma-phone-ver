@@ -1,4 +1,4 @@
-// UI Manager for Phone App
+// Phone App用のUIマネージャー
 (() => {
   'use strict';
 
@@ -130,20 +130,20 @@
     }
 
     switchTab(tabName, navItem, loadDataCallback) {
-      // Hide all tab contents
+      // すべてのタブコンテンツを非表示にする
       const tabContents = document.querySelectorAll('.tab-content');
       tabContents.forEach(content => content.classList.remove('active'));
 
-      // Show selected tab
+      // 選択されたタブを表示する
       const selectedTab = document.getElementById(tabName);
       if (selectedTab) selectedTab.classList.add('active');
 
-      // Update navigation active state
+      // ナビゲーションのアクティブ状態を更新する
       const navItems = document.querySelectorAll('.nav-item');
       navItems.forEach(item => item.classList.remove('active'));
       if (navItem) navItem.classList.add('active');
 
-      // Update header title
+      // ヘッダータイトルを更新する
       const titles = {
         'balance': '所持金管理',
         'dashboard': 'ダッシュボード',
@@ -154,7 +154,7 @@
       const headerTitle = document.getElementById('headerTitle');
       if (headerTitle) headerTitle.textContent = titles[tabName];
 
-      // Load data callback
+      // データ読み込みコールバック
       if (loadDataCallback) {
         loadDataCallback(tabName);
       }
@@ -183,6 +183,6 @@
     }
   }
 
-  // Global export
+  // グローバルエクスポート
   window.UiManager = UiManager;
 })();

@@ -1,4 +1,4 @@
-// Utilities for Phone App
+// Phone App用のユーティリティ
 (() => {
   'use strict';
 
@@ -41,7 +41,7 @@
     }
 
     static setupButtonInteractions() {
-      // Button interactions
+      // ボタンインタラクション
       document.querySelectorAll('.btn').forEach(btn => {
         btn.addEventListener('click', function () {
           if (!this.disabled) {
@@ -55,9 +55,9 @@
     }
   }
 
-  // Global exports
+  // グローバルエクスポート
   window.Utils = Utils;
 
-  // Legacy global function support
+  // レガシーグローバル関数サポート
   window.showNotification = Utils.showNotification;
 })();
