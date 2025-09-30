@@ -1,5 +1,14 @@
 [
   {
+    "timestamp": "2025-09-30T08:23:56.940Z",
+    "id": "CC-2025-0NS9EN",
+    "games": "",
+    "type": "add",
+    "amount": 100,
+    "balance": 1400,
+    "dealer": ""
+  },
+  {
     "timestamp": "2025-09-29T11:15:01.117Z",
     "id": "CC-2025-Y48YC",
     "games": "",
