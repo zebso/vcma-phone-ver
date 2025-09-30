@@ -37,14 +37,6 @@
     this.stopBtn = document.getElementById('qrStopBtn');
     this.switchBtn = document.getElementById('qrSwitchBtn');
     this.idleEl = document.getElementById('qrIdle');
-    
-    // デバッグ用ログ
-    console.log('QRScanner要素初期化:', {
-      scannerEl: !!this.scannerEl,
-      videoEl: !!this.videoEl,
-      canvasEl: !!this.canvasEl,
-      jsQRライブラリ: typeof jsQR !== 'undefined'
-    });
   };
 
   QRScanner.prototype.enumerateCameras = function() {
@@ -106,7 +98,6 @@
 
   QRScanner.prototype.start = function() {
     var self = this;
-    console.log('QRスキャナー開始中...');
     
     return this.enumerateCameras()
       .then(function() {
@@ -243,8 +234,6 @@
           this.handleResult(code.data);
           return;
         }
-      } else {
-        console.warn('jsQRライブラリが読み込まれていません');
       }
     }
     requestAnimationFrame(function() { self.tick(); });
