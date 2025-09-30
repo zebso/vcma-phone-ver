@@ -1,0 +1,333 @@
+@charset "utf-8";
+
+/* RESPONSIVE GRID SYSTEM */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Grid Items - Mobile Default */
+.grid-col-1 { grid-column: span 1; }
+.grid-col-2 { grid-column: span 2; }
+.grid-col-3 { grid-column: span 3; }
+.grid-col-4 { grid-column: span 4; }
+.grid-col-5 { grid-column: span 5; }
+.grid-col-6 { grid-column: span 6; }
+.grid-col-7 { grid-column: span 7; }
+.grid-col-8 { grid-column: span 8; }
+.grid-col-9 { grid-column: span 9; }
+.grid-col-10 { grid-column: span 10; }
+.grid-col-11 { grid-column: span 11; }
+.grid-col-12 { grid-column: span 12; }
+
+.grid-full { grid-column: 1 / -1; }
+.grid-offset-1 { grid-column-start: 2; }
+.grid-offset-2 { grid-column-start: 3; }
+.grid-offset-3 { grid-column-start: 4; }
+.grid-offset-4 { grid-column-start: 5; }
+.grid-offset-5 { grid-column-start: 6; }
+.grid-offset-6 { grid-column-start: 7; }
+
+/* ========================================== */
+/* TABLET PORTRAIT (768px - 1023px)          */
+/* ========================================== */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .grid-container {
+    gap: 24px;
+    padding: 0 24px;
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  /* タブレット専用グリッドクラス */
+  .grid-tablet-1 { grid-column: span 1; }
+  .grid-tablet-2 { grid-column: span 2; }
+  .grid-tablet-3 { grid-column: span 3; }
+  .grid-tablet-4 { grid-column: span 4; }
+  .grid-tablet-5 { grid-column: span 5; }
+  .grid-tablet-6 { grid-column: span 6; }
+  .grid-tablet-7 { grid-column: span 7; }
+  .grid-tablet-8 { grid-column: span 8; }
+  .grid-tablet-9 { grid-column: span 9; }
+  .grid-tablet-10 { grid-column: span 10; }
+  .grid-tablet-11 { grid-column: span 11; }
+  .grid-tablet-12 { grid-column: span 12; }
+
+  /* タブレット用レイアウトパターン */
+  .grid-tablet-half { grid-column: span 6; }
+  .grid-tablet-third { grid-column: span 4; }
+  .grid-tablet-quarter { grid-column: span 3; }
+
+  /* タブレット用オフセット */
+  .grid-tablet-offset-1 { grid-column-start: 2; }
+  .grid-tablet-offset-2 { grid-column-start: 3; }
+  .grid-tablet-offset-3 { grid-column-start: 4; }
+}
+
+/* ========================================== */
+/* TABLET LANDSCAPE (1024px - 1365px)        */
+/* ========================================== */
+
+@media screen and (min-width: 1024px) and (max-width: 1365px) {
+  .grid-container {
+    gap: 32px;
+    padding: 0 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ランドスケープ専用グリッドクラス */
+  .grid-landscape-1 { grid-column: span 1; }
+  .grid-landscape-2 { grid-column: span 2; }
+  .grid-landscape-3 { grid-column: span 3; }
+  .grid-landscape-4 { grid-column: span 4; }
+  .grid-landscape-5 { grid-column: span 5; }
+  .grid-landscape-6 { grid-column: span 6; }
+  .grid-landscape-7 { grid-column: span 7; }
+  .grid-landscape-8 { grid-column: span 8; }
+  .grid-landscape-9 { grid-column: span 9; }
+  .grid-landscape-10 { grid-column: span 10; }
+  .grid-landscape-11 { grid-column: span 11; }
+  .grid-landscape-12 { grid-column: span 12; }
+
+  /* ランドスケープ用レイアウトパターン */
+  .grid-landscape-half { grid-column: span 6; }
+  .grid-landscape-third { grid-column: span 4; }
+  .grid-landscape-quarter { grid-column: span 3; }
+  .grid-landscape-two-thirds { grid-column: span 8; }
+
+  /* ランドスケープ用オフセット */
+  .grid-landscape-offset-1 { grid-column-start: 2; }
+  .grid-landscape-offset-2 { grid-column-start: 3; }
+  .grid-landscape-offset-3 { grid-column-start: 4; }
+  .grid-landscape-offset-4 { grid-column-start: 5; }
+}
+
+/* ========================================== */
+/* DESKTOP (1366px+)                         */
+/* ========================================== */
+
+@media screen and (min-width: 1366px) {
+  .grid-container {
+    gap: 40px;
+    padding: 0 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* デスクトップ専用グリッドクラス */
+  .grid-desktop-1 { grid-column: span 1; }
+  .grid-desktop-2 { grid-column: span 2; }
+  .grid-desktop-3 { grid-column: span 3; }
+  .grid-desktop-4 { grid-column: span 4; }
+  .grid-desktop-5 { grid-column: span 5; }
+  .grid-desktop-6 { grid-column: span 6; }
+  .grid-desktop-7 { grid-column: span 7; }
+  .grid-desktop-8 { grid-column: span 8; }
+  .grid-desktop-9 { grid-column: span 9; }
+  .grid-desktop-10 { grid-column: span 10; }
+  .grid-desktop-11 { grid-column: span 11; }
+  .grid-desktop-12 { grid-column: span 12; }
+
+  /* デスクトップ用レイアウトパターン */
+  .grid-desktop-half { grid-column: span 6; }
+  .grid-desktop-third { grid-column: span 4; }
+  .grid-desktop-quarter { grid-column: span 3; }
+  .grid-desktop-two-thirds { grid-column: span 8; }
+  .grid-desktop-three-quarters { grid-column: span 9; }
+
+  /* デスクトップ用オフセット */
+  .grid-desktop-offset-1 { grid-column-start: 2; }
+  .grid-desktop-offset-2 { grid-column-start: 3; }
+  .grid-desktop-offset-3 { grid-column-start: 4; }
+  .grid-desktop-offset-4 { grid-column-start: 5; }
+  .grid-desktop-offset-5 { grid-column-start: 6; }
+  .grid-desktop-offset-6 { grid-column-start: 7; }
+}
+
+/* ========================================== */
+/* SPECIALIZED GRID LAYOUTS                  */
+/* ========================================== */
+
+/* ダッシュボード用統計カードグリッド */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+}
+
+/* フォーム用グリッド */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .form-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+/* カード型レイアウト用グリッド */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+}
+
+/* ========================================== */
+/* GRID UTILITIES                            */
+/* ========================================== */
+
+/* グリッドアイテムの配置 */
+.grid-center {
+  justify-self: center;
+  align-self: center;
+}
+
+.grid-start {
+  justify-self: start;
+  align-self: start;
+}
+
+.grid-end {
+  justify-self: end;
+  align-self: end;
+}
+
+.grid-stretch {
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+/* 垂直配置 */
+.grid-align-start { align-self: start; }
+.grid-align-center { align-self: center; }
+.grid-align-end { align-self: end; }
+.grid-align-stretch { align-self: stretch; }
+
+/* 水平配置 */
+.grid-justify-start { justify-self: start; }
+.grid-justify-center { justify-self: center; }
+.grid-justify-end { justify-self: end; }
+.grid-justify-stretch { justify-self: stretch; }
+
+/* グリッドの順序変更 */
+.grid-order-1 { order: 1; }
+.grid-order-2 { order: 2; }
+.grid-order-3 { order: 3; }
+.grid-order-4 { order: 4; }
+.grid-order-5 { order: 5; }
+.grid-order-first { order: -1; }
+.grid-order-last { order: 999; }
+
+/* ========================================== */
+/* RESPONSIVE VISIBILITY                     */
+/* ========================================== */
+
+/* モバイルでのみ表示 */
+.grid-mobile-only {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-mobile-only {
+    display: none;
+  }
+}
+
+/* タブレットでのみ表示 */
+.grid-tablet-only {
+  display: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .grid-tablet-only {
+    display: block;
+  }
+}
+
+/* デスクトップでのみ表示 */
+.grid-desktop-only {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .grid-desktop-only {
+    display: block;
+  }
+}
+
+/* ========================================== */
+/* DEBUG UTILITIES (開発時のみ使用)           */
+/* ========================================== */
+
+.grid-debug .grid-container {
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px dashed red;
+}
+
+.grid-debug .grid-container > * {
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid green;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #333;
+}

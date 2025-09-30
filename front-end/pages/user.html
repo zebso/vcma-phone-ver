@@ -16,7 +16,7 @@
 
     <div class="content">
       <!-- Balance Tab -->
-      <div class="tab-content" id="balance">
+      <div class="tab-content" id="balance" role="tabpanel" aria-labelledby="nav-item-0">
         <div class="balance-card">
           <div class="balance-amount">¥0</div>
           <div class="balance-label">現在の所持金</div>
@@ -50,29 +50,33 @@
 
         <div class="input-section">
           <h3 style="margin-bottom: 16px;">金額変更</h3>
-          <div class="input-group">
-            <label>変更金額</label>
-            <input type="number" class="input-field" placeholder="金額を入力" inputmode="numeric">
+          <div class="form-grid">
+            <div class="input-group grid-col-12 grid-tablet-6 grid-desktop-6">
+              <label>変更金額</label>
+              <input type="number" class="input-field" placeholder="金額を入力" inputmode="numeric">
+            </div>
+            <div class="input-group grid-col-12 grid-tablet-6 grid-desktop-6">
+              <label>ゲーム名（オプション）</label>
+              <select id="gameType" class="input-field" style="width:100%;">
+                <option value="">選択してください</option>
+                <option value="blackjack">ブラックジャック</option>
+                <option value="poker">ポーカー</option>
+                <option value="baccarat">バカラ</option>
+                <option value="roulette">ルーレット</option>
+                <option value="slot">スロット</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
           </div>
-          <div class="input-group">
-            <label>ゲーム名（オプション）</label>
-            <select id="gameType" class="input-field" style="width:100%;">
-              <option value="">選択してください</option>
-              <option value="blackjack">ブラックジャック</option>
-              <option value="poker">ポーカー</option>
-              <option value="baccarat">バカラ</option>
-              <option value="roulette">ルーレット</option>
-              <option value="slot">スロット</option>
-              <option value="other">その他</option>
-            </select>
+          <div class="grid-container" style="margin-top: 20px;">
+            <button class="btn grid-col-6 grid-tablet-6 grid-desktop-6">追加</button>
+            <button class="btn btn-outline grid-col-6 grid-tablet-6 grid-desktop-6">減算</button>
           </div>
-          <button class="btn">追加</button>
-          <button class="btn btn-outline">減算</button>
         </div>
       </div>
 
       <!-- Dashboard Tab -->
-      <div class="tab-content active" id="dashboard">
+      <div class="tab-content active" id="dashboard" role="tabpanel" aria-labelledby="nav-item-1">
         <h3 style="margin-bottom: 20px;">ダッシュボード</h3>
         <div class="stats-grid">
           <div class="stat-card">
@@ -94,7 +98,7 @@
       </div>
 
       <!-- Ranking Tab -->
-      <div class="tab-content" id="ranking">
+      <div class="tab-content" id="ranking" role="tabpanel" aria-labelledby="nav-item-2">
         <h3 style="margin-bottom: 20px;">ランキング</h3>
         <div style="text-align: center; padding: 40px 20px; color: #666;">
           <i class="material-icons" style="font-size: 48px; margin-bottom: 16px;">leaderboard</i>
@@ -103,7 +107,7 @@
       </div>
 
       <!-- History Tab -->
-      <div class="tab-content" id="history">
+      <div class="tab-content" id="history" role="tabpanel" aria-labelledby="nav-item-3">
         <h3 style="margin-bottom: 20px;">取引履歴</h3>
         <div style="text-align: center; padding: 40px 20px; color: #666;">
           <i class="material-icons" style="font-size: 48px; margin-bottom: 16px;">history</i>
@@ -112,7 +116,7 @@
       </div>
 
       <!-- Settings Tab -->
-      <div class="tab-content" id="settings">
+      <div class="tab-content" id="settings" role="tabpanel" aria-labelledby="nav-item-4">
         <h3 style="margin-bottom: 20px;">設定</h3>
         <div class="settings-item">
           <div class="settings-label">ダークモード</div>
@@ -125,28 +129,28 @@
     </div>
 
     <!-- Bottom Navigation -->
-    <div class="bottom-nav">
-      <div class="nav-item active" onclick="switchTab('dashboard', this)">
+    <nav class="bottom-nav" role="navigation" aria-label="メインナビゲーション">
+      <div class="nav-item active" id="nav-item-1" role="tab" aria-controls="dashboard" aria-selected="true" onclick="switchTab('dashboard', this)">
         <i class="material-icons">dashboard</i>
         <span>統計</span>
       </div>
-      <div class="nav-item" onclick="switchTab('balance', this)">
+      <div class="nav-item" id="nav-item-0" role="tab" aria-controls="balance" aria-selected="false" onclick="switchTab('balance', this)">
         <i class="material-icons">account_balance_wallet</i>
         <span>残高</span>
       </div>
-      <div class="nav-item" onclick="switchTab('ranking', this)">
+      <div class="nav-item" id="nav-item-2" role="tab" aria-controls="ranking" aria-selected="false" onclick="switchTab('ranking', this)">
         <i class="material-icons">people</i>
         <span>ユーザー</span>
       </div>
-      <div class="nav-item" onclick="switchTab('history', this)">
+      <div class="nav-item" id="nav-item-3" role="tab" aria-controls="history" aria-selected="false" onclick="switchTab('history', this)">
         <i class="material-icons">history</i>
         <span>履歴</span>
       </div>
-      <div class="nav-item" onclick="switchTab('settings', this)">
+      <div class="nav-item" id="nav-item-4" role="tab" aria-controls="settings" aria-selected="false" onclick="switchTab('settings', this)">
         <i class="material-icons">settings</i>
         <span>設定</span>
       </div>
-    </div>
+    </nav>
   </div>
   <!-- jsQRライブラリ -->
   <script src="../js/jsQR.js"></script>
@@ -155,6 +159,7 @@
   <script src="../js/uiManager.js"></script>
   <script src="../js/eventHandlers.js"></script>
   <script src="../js/qrScanner.js"></script>
+  <script src="../js/keyboardNavigation.js"></script>
   <script src="../js/phoneApp.js"></script>
 </body>
 

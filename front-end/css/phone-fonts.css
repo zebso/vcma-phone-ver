@@ -34,3 +34,262 @@
   -webkit-font-smoothing: antialiased;
   font-feature-settings: 'liga';
 }
+
+/* ========================================== */
+/* RESPONSIVE TYPOGRAPHY SYSTEM              */
+/* ========================================== */
+
+/* モバイルタイポグラフィ（デフォルト）*/
+h1, .h1 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #212121;
+  letter-spacing: -0.02em;
+}
+
+h2, .h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  color: #212121;
+  letter-spacing: -0.01em;
+}
+
+h3, .h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  color: #212121;
+}
+
+h4, .h4 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  color: #212121;
+}
+
+h5, .h5 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 4px;
+  color: #212121;
+}
+
+h6, .h6 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 4px;
+  color: #212121;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 本文テキスト */
+p, .body-text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: #666666;
+}
+
+.body-small {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666666;
+}
+
+.body-large {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #212121;
+}
+
+/* ユーティリティタイポグラフィ */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.font-weight-light { font-weight: 300; }
+.font-weight-normal { font-weight: 400; }
+.font-weight-medium { font-weight: 500; }
+.font-weight-semibold { font-weight: 600; }
+.font-weight-bold { font-weight: 700; }
+
+/* ダークモード対応 */
+body.dark-mode h1, body.dark-mode .h1,
+body.dark-mode h2, body.dark-mode .h2,
+body.dark-mode h3, body.dark-mode .h3,
+body.dark-mode h4, body.dark-mode .h4,
+body.dark-mode h5, body.dark-mode .h5,
+body.dark-mode h6, body.dark-mode .h6 {
+  color: #ffffff;
+}
+
+body.dark-mode p, body.dark-mode .body-text,
+body.dark-mode .body-small,
+body.dark-mode .body-large {
+  color: #b0b0b0;
+}
+
+/* ========================================== */
+/* TABLET TYPOGRAPHY (768px - 1023px)        */
+/* ========================================== */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  h1, .h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+  
+  h2, .h2 {
+    font-size: 28px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+  
+  h3, .h3 {
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+  
+  h4, .h4 {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  
+  h5, .h5 {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  
+  h6, .h6 {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  
+  p, .body-text {
+    font-size: 17px;
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+  
+  .body-small {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  
+  .body-large {
+    font-size: 20px;
+    line-height: 1.7;
+  }
+}
+
+/* ========================================== */
+/* DESKTOP TYPOGRAPHY (1024px+)              */
+/* ========================================== */
+
+@media screen and (min-width: 1024px) {
+  h1, .h1 {
+    font-size: 36px;
+    line-height: 1.15;
+    margin-bottom: 32px;
+    letter-spacing: -0.025em;
+  }
+  
+  h2, .h2 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  
+  h3, .h3 {
+    font-size: 26px;
+    line-height: 1.25;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  
+  h4, .h4 {
+    font-size: 22px;
+    line-height: 1.35;
+    margin-bottom: 16px;
+  }
+  
+  h5, .h5 {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+  
+  h6, .h6 {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  
+  p, .body-text {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  
+  .body-small {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .body-large {
+    font-size: 22px;
+    line-height: 1.75;
+  }
+  
+  /* デスクトップ専用タイポグラフィ */
+  .display-1 {
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  
+  .display-2 {
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+  
+  .lead {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #666666;
+  }
+  
+  .caption {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  
+  body.dark-mode .lead,
+  body.dark-mode .caption {
+    color: #b0b0b0;
+  }
+}

@@ -1,0 +1,416 @@
+@charset "utf-8";
+
+/* TOUCH INTERACTION OPTIMIZATION */
+
+/* Touch Target Minimum Sizes */
+button,
+.btn,
+.nav-item,
+input[type="button"],
+input[type="submit"],
+.input-field,
+select,
+.qr-scanner,
+.ranking-item,
+.history-item,
+.stat-card {
+  min-height: 44px;
+  min-width: 44px;
+  position: relative;
+}
+
+/* タブレット以上でのタッチターゲット拡張 */
+@media screen and (min-width: 768px) {
+  button,
+  .btn,
+  .nav-item,
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  .input-field,
+  select {
+    min-height: 52px;
+  }
+  
+  .qr-scanner {
+    min-height: 60px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  button,
+  .btn,
+  .nav-item,
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 52px;
+    min-width: 52px;
+  }
+  
+  .input-field,
+  select {
+    min-height: 56px;
+  }
+}
+
+/* ========================================== */
+/* TOUCH FEEDBACK ENHANCEMENTS              */
+/* ========================================== */
+
+/* タッチ開始時の即座フィードバック */
+@media (hover: none) and (pointer: coarse) {
+  button:active,
+  .btn:active,
+  .nav-item:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  .input-field:focus,
+  select:focus {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+  }
+  
+  .ranking-item:active,
+  .history-item:active,
+  .stat-card:active {
+    transform: scale(0.99);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* タブレット専用タッチフィードバック */
+@media screen and (min-width: 768px) and (max-width: 1023px) and (hover: none) {
+  .balance-card:active {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(25, 118, 210, 0.4);
+    transition: all 0.2s ease;
+  }
+  
+  .input-section:active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transition: all 0.2s ease;
+  }
+}
+
+/* ========================================== */
+/* GESTURE SUPPORT                           */
+/* ========================================== */
+
+/* スワイプ対応（CSS実装部分） */
+.swipe-container {
+  touch-action: pan-x;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* タブコンテンツにスワイプ準備 */
+.tab-content {
+  touch-action: pan-y;
+  overscroll-behavior-x: contain;
+}
+
+/* ピンチズーム防止（必要な場所のみ） */
+.nav-item,
+.btn,
+button {
+  touch-action: manipulation;
+}
+
+/* ========================================== */
+/* TABLET SPECIFIC INTERACTIONS             */
+/* ========================================== */
+
+/* タブレット専用ホバー効果（タッチ対応デバイス除外） */
+@media screen and (min-width: 768px) and (hover: hover) {
+  .balance-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 32px rgba(25, 118, 210, 0.35);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .input-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .ranking-item:hover,
+  .history-item:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+  }
+}
+
+/* ========================================== */
+/* IMPROVED SPACING FOR TOUCH               */
+/* ========================================== */
+
+/* タブレット用の拡張スペーシング */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .btn {
+    margin: 8px 4px;
+    padding: 16px 24px;
+  }
+  
+  .nav-item {
+    margin: 8px 0;
+    padding: 20px 16px;
+  }
+  
+  .input-group {
+    margin-bottom: 24px;
+  }
+  
+  .ranking-item,
+  .history-item {
+    margin-bottom: 16px;
+    padding: 24px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .btn {
+    margin: 10px 6px;
+    padding: 18px 32px;
+  }
+  
+  .nav-item {
+    margin: 10px 0;
+    padding: 24px 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 28px;
+  }
+  
+  .ranking-item,
+  .history-item {
+    margin-bottom: 20px;
+    padding: 28px;
+  }
+}
+
+/* ========================================== */
+/* ENHANCED VISUAL FEEDBACK                 */
+/* ========================================== */
+
+/* フォーカス時の視覚的フィードバック強化 */
+.input-field:focus,
+select:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.25);
+  background: rgba(25, 118, 210, 0.02);
+}
+
+/* タブレット用フォーカス拡張 */
+@media screen and (min-width: 768px) {
+  .input-field:focus,
+  select:focus {
+    box-shadow: 0 0 0 6px rgba(25, 118, 210, 0.25);
+    background: rgba(25, 118, 210, 0.03);
+  }
+}
+
+/* アクティブ状態の強化 */
+.btn:active,
+button:active {
+  background: #1565c0;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.4);
+  transform: translateY(1px);
+}
+
+.btn-outline:active {
+  background: rgba(25, 118, 210, 0.1);
+  border-color: #1565c0;
+  color: #1565c0;
+}
+
+/* ========================================== */
+/* ACCESSIBILITY ENHANCEMENTS              */
+/* ========================================== */
+
+/* 高コントラストモード対応 */
+@media (prefers-contrast: high) {
+  .btn,
+  button {
+    border-width: 3px;
+    font-weight: 600;
+  }
+  
+  .input-field,
+  select {
+    border-width: 2px;
+  }
+  
+  .nav-item.active {
+    outline: 3px solid #1976d2;
+    outline-offset: 2px;
+  }
+}
+
+/* 動きを抑えたい場合の対応 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .btn:active,
+  button:active,
+  .nav-item:active {
+    transform: none;
+  }
+}
+
+/* ========================================== */
+/* TABLET LANDSCAPE OPTIMIZATIONS           */
+/* ========================================== */
+
+@media screen and (min-width: 1024px) and (max-width: 1365px) and (orientation: landscape) {
+  /* ランドスケープ特有の調整 */
+  .balance-card {
+    max-width: 80%;
+    margin: 0 auto 32px auto;
+  }
+  
+  .input-section {
+    max-width: 90%;
+    margin: 0 auto 24px auto;
+  }
+  
+  /* 横長画面でのボタン配置最適化 */
+  .btn-group {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn-group .btn {
+    flex: 1;
+    min-width: 120px;
+    max-width: 200px;
+  }
+}
+
+/* ========================================== */
+/* PERFORMANCE OPTIMIZATIONS                */
+/* ========================================== */
+
+/* ハードウェアアクセラレーション最適化 */
+.btn,
+.nav-item,
+.balance-card,
+.input-section,
+.stat-card,
+.ranking-item,
+.history-item {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* タッチイベント最適化 */
+.btn,
+.nav-item,
+button,
+.input-field,
+select {
+  -webkit-tap-highlight-color: rgba(25, 118, 210, 0.3);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 入力フィールドは選択可能にする */
+.input-field,
+select,
+textarea {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* ========================================== */
+/* RESPONSIVE TOUCH ZONES                   */
+/* ========================================== */
+
+/* 小さな要素の擬似要素でタッチエリア拡張 */
+.small-touch-target {
+  position: relative;
+}
+
+.small-touch-target::after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  z-index: 1;
+}
+
+/* アイコンボタンのタッチエリア拡張 */
+.icon-btn {
+  position: relative;
+  padding: 12px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.icon-btn::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  background: rgba(25, 118, 210, 0);
+  transition: background 0.2s ease;
+}
+
+.icon-btn:active::after {
+  background: rgba(25, 118, 210, 0.1);
+}
+
+@media screen and (min-width: 768px) {
+  .icon-btn {
+    padding: 16px;
+  }
+  
+  .icon-btn::after {
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+  }
+}

@@ -36,16 +36,22 @@
             <canvas id="qrCanvas" style="display:none;"></canvas>
 
             <div id="qrOverlay" style="display:none; text-align:center; margin-top:8px;">
-              <button class="btn" id="qrStopBtn" type="button">停止</button>
-              <button class="btn btn-outline" id="qrSwitchBtn" type="button">カメラ切替</button>
+              <div class="grid-container">
+                <button class="btn grid-col-6" id="qrStopBtn" type="button">停止</button>
+                <button class="btn btn-outline grid-col-6" id="qrSwitchBtn" type="button">カメラ切替</button>
+              </div>
             </div>
           </div>
           <div style="text-align: center; margin: 16px 0; color: #666;">または</div>
-          <div class="input-group">
-            <label>ユーザーID</label>
-            <input type="text" class="input-field" placeholder="ユーザーIDを入力">
+          <div class="form-grid">
+            <div class="input-group grid-col-12">
+              <label>ユーザーID</label>
+              <input type="text" class="input-field" placeholder="ユーザーIDを入力">
+            </div>
           </div>
-          <button class="btn">検索</button>
+          <div class="grid-container" style="margin-top: 16px;">
+            <button class="btn grid-full">検索</button>
+          </div>
         </div>
 
         <div class="input-section">

@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/* PERFORMANCE OPTIMIZATIONS */
+
+/* GPU Hardware Acceleration */
+.btn,
+.nav-item,
+.balance-card,
+.input-section,
+.stat-card,
+.ranking-item,
+.history-item,
+.switch .slider,
+.tab-content {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* Smooth Transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Critical Resource Hints */
+.balance-card,
+.nav-item,
+.btn {
+  contain: layout style paint;
+}
+
+/* Optimized Repaints */
+.app-container {
+  contain: layout;
+}
+
+.content {
+  contain: layout style;
+}

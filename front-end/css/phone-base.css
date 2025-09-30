@@ -3,7 +3,13 @@
 /* ベーススタイル・リセット */
 
 /* QR Scanner specific */
-:root { --qr-line: #00e676; }
+:root { 
+  --qr-line: #00e676; 
+}
+
+/* ========================================== */
+/* RESPONSIVE BASE STYLES                     */
+/* ========================================== */
 
 /* Phone App specific overrides */
 body {
@@ -11,10 +17,17 @@ body {
   background-color: #fafafa;
   color: #212121;
   overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: 1.6;
+}
+
+/* ダークモード時のベースカラー */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
 }
 
 /* Reset any global styles that might interfere */
@@ -22,4 +35,94 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* ========================================== */
+/* UTILITY CLASSES                           */
+/* ========================================== */
+
+/* スペーシングユーティリティ */
+.spacing-xs { margin: 4px; }
+.spacing-sm { margin: 8px; }
+.spacing-md { margin: 16px; }
+.spacing-lg { margin: 24px; }
+.spacing-xl { margin: 32px; }
+.spacing-xxl { margin: 48px; }
+
+.p-xs { padding: 4px; }
+.p-sm { padding: 8px; }
+.p-md { padding: 16px; }
+.p-lg { padding: 24px; }
+.p-xl { padding: 32px; }
+.p-xxl { padding: 48px; }
+
+.m-xs { margin: 4px; }
+.m-sm { margin: 8px; }
+.m-md { margin: 16px; }
+.m-lg { margin: 24px; }
+.m-xl { margin: 32px; }
+.m-xxl { margin: 48px; }
+
+/* シャドウユーティリティ */
+.shadow-xs { box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.shadow-sm { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.shadow-md { box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.shadow-lg { box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+.shadow-xl { box-shadow: 0 8px 32px rgba(0,0,0,0.18); }
+.shadow-primary { box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3); }
+
+/* カラーユーティリティ */
+.text-primary { color: #1976d2; }
+.text-secondary { color: #666666; }
+.text-success { color: #4caf50; }
+.text-error { color: #f44336; }
+.text-warning { color: #ff9800; }
+.text-info { color: #2196f3; }
+
+body.dark-mode .text-secondary { color: #b0b0b0; }
+body.dark-mode .text-success { color: #81c784; }
+body.dark-mode .text-error { color: #ef5350; }
+
+/* ボーダーユーティリティ */
+.border-light { border: 1px solid #e0e0e0; }
+.border-alt-light { border: 1px solid #f0f0f0; }
+
+body.dark-mode .border-light { border-color: #555555; }
+body.dark-mode .border-alt-light { border-color: #444444; }
+
+/* レスポンシブ表示ユーティリティ */
+.mobile-only { display: block; }
+.tablet-only { display: none; }
+.desktop-only { display: none; }
+
+/* ========================================== */
+/* RESPONSIVE UTILITIES                       */
+/* ========================================== */
+
+@media screen and (min-width: 768px) {
+  .mobile-only { display: none; }
+  .tablet-only { display: block; }
+  .desktop-only { display: none; }
+  
+  /* タブレット用スペーシング拡張 */
+  .spacing-xxl { margin: 48px; }
+  .p-xxl { padding: 48px; }
+  .m-xxl { margin: 48px; }
+}
+
+@media screen and (min-width: 1024px) {
+  .mobile-only { display: none; }
+  .tablet-only { display: none; }
+  .desktop-only { display: block; }
+  
+  /* デスクトップ用スペーシング拡張 */
+  .spacing-xxxl { margin: 64px; }
+  .p-xxxl { padding: 64px; }
+  .m-xxxl { margin: 64px; }
+}
+
+/* フォーカス管理 */
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.3);
 }
