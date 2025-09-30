@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* コンポーネントスタイル */
+/* コンポ�Eネントスタイル */
 
 /* Balance Card */
 .balance-card {
@@ -410,7 +410,7 @@ input:checked + .slider:before {
 /* Desktop Responsive Components (1024px+) */
 @media screen and (min-width: 1024px) {
   
-  /* デスクトップ用グリッドレイアウトシステム */
+  /* チE��クトップ用グリチE��レイアウトシスチE�� */
   .desktop-main-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -430,7 +430,7 @@ input:checked + .slider:before {
     gap: 20px;
   }
   
-  /* 改善されたバランスカード */
+  /* 改喁E��れたバランスカーチE*/
   .balance-card {
     background: linear-gradient(135deg, #1976d2, #42a5f5);
     border-radius: 16px;
@@ -472,7 +472,7 @@ input:checked + .slider:before {
     opacity: 0.95;
   }
   
-  /* 改善された入力セクション */
+  /* 改喁E��れた入力セクション */
   .input-section {
     background: white;
     border-radius: 16px;
@@ -526,7 +526,7 @@ input:checked + .slider:before {
     transform: translateY(-1px);
   }
   
-  /* 改善されたボタン */
+  /* 改喁E��れたボタン */
   .btn {
     padding: 16px 32px;
     font-size: 16px;
@@ -577,7 +577,7 @@ input:checked + .slider:before {
     border-color: #1976d2;
   }
   
-  /* 改善されたQRスキャナー */
+  /* 改喁E��れたQRスキャナ�E */
   .qr-scanner {
     border-radius: 16px;
     min-height: 320px;
@@ -615,7 +615,7 @@ input:checked + .slider:before {
     font-weight: 500;
   }
   
-  /* 改善されたトランザクションアイテム */
+  /* 改喁E��れたトランザクションアイチE�� */
   .transaction-item {
     background: white;
     padding: 20px 24px;
@@ -648,7 +648,7 @@ input:checked + .slider:before {
     font-weight: 700;
   }
   
-  /* 改善された統計カード */
+  /* 改喁E��れた統計カーチE*/
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -694,7 +694,7 @@ input:checked + .slider:before {
     letter-spacing: 0.5px;
   }
   
-  /* トランザクションリストの改善 */
+  /* トランザクションリスト�E改喁E*/
   .transaction-list {
     margin-bottom: 32px;
   }
@@ -713,7 +713,7 @@ input:checked + .slider:before {
     margin-bottom: 0;
   }
   
-  /* デスクトップ専用のコンテンツラッパー */
+  /* チE��クトップ専用のコンチE��チE��チE��ー */
   .desktop-content-wrapper {
     background: white;
     border-radius: 16px;
@@ -739,7 +739,7 @@ input:checked + .slider:before {
     padding: 32px;
   }
   
-  /* グリッドコンテナのスペーシング改善 */
+  /* グリチE��コンチE��のスペ�Eシング改喁E*/
   .desktop-main-grid > * {
     background: white;
     border-radius: 16px;
@@ -747,7 +747,7 @@ input:checked + .slider:before {
     overflow: hidden;
   }
   
-  /* フローティングアクションのスタイル */
+  /* フローチE��ングアクションのスタイル */
   .desktop-actions {
     position: sticky;
     bottom: 24px;
@@ -762,7 +762,7 @@ input:checked + .slider:before {
     box-shadow: 0 4px 16px rgba(25, 118, 210, 0.3);
   }
   
-  /* デスクトップ専用スペーシングユーティリティ */
+  /* チE��クトップ専用スペ�EシングユーチE��リチE�� */
   .desktop-section-spacing {
     margin-bottom: 40px;
   }
@@ -775,7 +775,7 @@ input:checked + .slider:before {
     margin-bottom: 24px;
   }
   
-  /* セクション区切りの視覚的改善 */
+  /* セクション区刁E��の視覚的改喁E*/
   .desktop-divider {
     width: 100%;
     height: 1px;
@@ -783,7 +783,7 @@ input:checked + .slider:before {
     margin: 40px 0;
   }
   
-  /* コンテンツ内のより良いフロー */
+  /* コンチE��チE�Eのより良ぁE��ロー */
   .balance-card + .input-section {
     margin-top: 40px;
   }
@@ -795,4 +795,96 @@ input:checked + .slider:before {
   .stats-grid + .transaction-list {
     margin-top: 40px;
   }
+  
+  /* モバイルファースト�E基本コンポ�Eネント�E既存�Eまま保護 */
+  /* 以下、不足してぁE��コンポ�Eネント�Eレスポンシブ対応を追加 */
+  
+  /* ランキングアイチE��のチE��クトップ対忁E*/
+  .ranking-item {
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .ranking-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+  
+  .ranking-number {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .ranking-name {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .ranking-amount {
+    font-size: 15px;
+  }
+  
+  /* ヒストリーアイチE��のチE��クトップ対忁E*/
+  .history-item {
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .history-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+  
+  /* フォームコントロールの改喁E*/
+  select.input-field {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    padding-right: 48px;
+    appearance: none;
+  }
+  
+  /* チェチE��ボックス・ラジオボタンの改喁E*/
+  .checkbox-group,
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .checkbox-item,
+  .radio-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 8px 0;
+  }
+  
+  .checkbox-item input,
+  .radio-item input {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  .checkbox-item label,
+  .radio-item label {
+    margin: 0;
+    cursor: pointer;
+    font-size: 15px;
+  }
 }
+

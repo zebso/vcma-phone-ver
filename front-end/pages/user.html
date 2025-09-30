@@ -11,12 +11,12 @@
 <body>
   <div class="app-container">
     <div class="header">
-      <h1 id="headerTitle">ダッシュボード</h1>
+      <h1 id="headerTitle">所持金管理</h1>
     </div>
 
     <div class="content">
       <!-- Balance Tab -->
-      <div class="tab-content" id="balance">
+      <div class="tab-content active" id="balance">
         <div class="balance-card">
           <div class="balance-amount">¥0</div>
           <div class="balance-label">現在の所持金</div>
@@ -46,50 +46,6 @@
             <input type="text" class="input-field" placeholder="ユーザーIDを入力">
           </div>
           <button class="btn">検索</button>
-        </div>
-
-        <div class="input-section">
-          <h3 style="margin-bottom: 16px;">金額変更</h3>
-          <div class="input-group">
-            <label>変更金額</label>
-            <input type="number" class="input-field" placeholder="金額を入力" inputmode="numeric">
-          </div>
-          <div class="input-group">
-            <label>ゲーム名（オプション）</label>
-            <select id="gameType" class="input-field" style="width:100%;">
-              <option value="">選択してください</option>
-              <option value="blackjack">ブラックジャック</option>
-              <option value="poker">ポーカー</option>
-              <option value="baccarat">バカラ</option>
-              <option value="roulette">ルーレット</option>
-              <option value="slot">スロット</option>
-              <option value="other">その他</option>
-            </select>
-          </div>
-          <button class="btn">追加</button>
-          <button class="btn btn-outline">減算</button>
-        </div>
-      </div>
-
-      <!-- Dashboard Tab -->
-      <div class="tab-content active" id="dashboard">
-        <h3 style="margin-bottom: 20px;">ダッシュボード</h3>
-        <div class="stats-grid">
-          <div class="stat-card">
-            <i class="material-icons">people</i>
-            <div class="stat-number" id="activeIds">-</div>
-            <div class="stat-label">有効ID数</div>
-          </div>
-          <div class="stat-card">
-            <i class="material-icons">account_balance</i>
-            <div class="stat-number" id="totalBalance">¥-</div>
-            <div class="stat-label">合計発行通貨</div>
-          </div>
-          <div class="stat-card">
-            <i class="material-icons">swap_horiz</i>
-            <div class="stat-number" id="totalTransactions">-</div>
-            <div class="stat-label">合計取引数</div>
-          </div>
         </div>
       </div>
 
@@ -126,21 +82,13 @@
 
     <!-- Bottom Navigation -->
     <div class="bottom-nav">
-      <div class="nav-item active" onclick="switchTab('dashboard', this)">
-        <i class="material-icons">dashboard</i>
-        <span>統計</span>
-      </div>
-      <div class="nav-item" onclick="switchTab('balance', this)">
+      <div class="nav-item active" onclick="switchTab('balance', this)">
         <i class="material-icons">account_balance_wallet</i>
         <span>残高</span>
       </div>
       <div class="nav-item" onclick="switchTab('ranking', this)">
         <i class="material-icons">people</i>
         <span>ユーザー</span>
-      </div>
-      <div class="nav-item" onclick="switchTab('history', this)">
-        <i class="material-icons">history</i>
-        <span>履歴</span>
       </div>
       <div class="nav-item" onclick="switchTab('settings', this)">
         <i class="material-icons">settings</i>

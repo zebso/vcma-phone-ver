@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* ダークモーステーマ */
+/* ダークモースチE�EチE*/
 
 body.dark-mode {
   background-color: #121212;
@@ -323,7 +323,7 @@ body.dark-mode .stat-label {
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   }
   
-  /* デスクトップダークモードの追加改善 */
+  /* チE��クトップダークモード�E追加改喁E*/
   body.dark-mode .app-container {
     background: #121212;
   }
@@ -356,3 +356,4 @@ body.dark-mode .stat-label {
     color: #ffffff;
   }
 }
+
