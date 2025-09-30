@@ -139,7 +139,6 @@
             })
             .then(function() {
               self.videoEl.style.display = 'block';
-              self.canvasEl.style.display = 'block';
               self.overlayEl.style.display = 'block';
               self.idleEl.style.display = 'none';
 
@@ -178,7 +177,6 @@
     this.videoEl.srcObject = null;
 
     this.videoEl.style.display = 'none';
-    this.canvasEl.style.display = 'none';
     this.overlayEl.style.display = 'none';
     this.idleEl.style.display = 'block';
   };
